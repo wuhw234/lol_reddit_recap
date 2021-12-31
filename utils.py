@@ -5,7 +5,7 @@ import urllib.request
 def isImage(post):
     if not post.is_self and post.is_reddit_media_domain and post.domain == "i.redd.it":
         return True
-def downloadImage(post): #TODO: ADD text file to keep track of already tweeted shows, delete maybe?
+def downloadImage(post):
     if post.url.endswith(".png"):
         filetype = ".png"
     elif post.url.endswith(".jpg"):
