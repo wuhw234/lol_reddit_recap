@@ -1,5 +1,5 @@
 # Reddit Recap Bot
-A twitter bot that tweets the top posts from r/leagueoflegends and r/leagueofmemes daily.
+A twitter bot that tweets the top posts from r/leagueoflegends and r/leagueofmemes daily. Deployed on Heroku
 https://twitter.com/lolredditrecap
 
 # Prerequisites:
