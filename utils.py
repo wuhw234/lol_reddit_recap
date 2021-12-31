@@ -49,6 +49,14 @@ def getUrl(post):
     url = "https://redd.it/" + post.id
     return url
 
+def getFileSize():
+    path = "lol_reddit/recent_tweets.txt"
+    if not exists(path):
+        return 0
+    with open(path, "r") as file:
+        lines = file.readlines()
+    return len(lines)
+
 def replaceFile():
     path = "lol_reddit/recent_tweets.txt"
     with open(path, "r") as old:
