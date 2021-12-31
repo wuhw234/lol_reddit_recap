@@ -23,9 +23,9 @@ CLIENT_SECRET=""
 USER_AGENT=""
 ```
 
-#Running the bot
+# Running the bot
 Run twitterbot.py after you have created the .env file.
 
-#Built with:
+# Built with:
 - [Tweepy](https://docs.tweepy.org/en/stable/)
 - [Praw](https://praw.readthedocs.io/en/stable/)
