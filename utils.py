@@ -16,7 +16,7 @@ def downloadImage(post):
         print("unsupported image type")
         return False
 
-    filepath = post.id + filetype
+    filepath = os.path.join("lol_reddit", post.id + filetype)
     urllib.request.urlretrieve(post.url, filepath)
     
     mb_size = os.path.getsize(filepath) / 1000000
@@ -50,7 +50,7 @@ def getUrl(post):
     return url
 
 def getFileSize():
-    path = "recent_tweets.txt"
+    path = "lol_reddit/recent_tweets.txt"
     if not exists(path):
         return 0
     with open(path, "r") as file:
@@ -58,7 +58,7 @@ def getFileSize():
     return len(lines)
 
 def replaceFile():
-    path = "recent_tweets.txt"
+    path = "lol_reddit/recent_tweets.txt"
     with open(path, "r") as old:
         prev_lines = old.readlines()
     new_lines = prev_lines[-10:]
@@ -69,12 +69,12 @@ def replaceFile():
             new.write(line)
 
 def writeToFile(id):
-    path = "recent_tweets.txt"
+    path = "lol_reddit/recent_tweets.txt"
     with open(path, "a") as file:
         file.write(id)
         file.write("\n")
 def checkDuplicate(id):
-    path = "recent_tweets.txt"
+    path = "lol_reddit/recent_tweets.txt"
     if not exists(path):
         return False
     with open(path) as file:
