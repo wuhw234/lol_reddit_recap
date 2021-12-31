@@ -16,7 +16,7 @@ def downloadImage(post): #TODO: ADD text file to keep track of already tweeted s
         print("unsupported image type")
         return False
 
-    filepath = os.path.join("lol_reddit", post.id + filetype)
+    filepath = post.id + filetype
     urllib.request.urlretrieve(post.url, filepath)
     
     mb_size = os.path.getsize(filepath) / 1000000
@@ -50,7 +50,7 @@ def getUrl(post):
     return url
 
 def getFileSize():
-    path = "lol_reddit/recent_tweets.txt"
+    path = "recent_tweets.txt"
     if not exists(path):
         return 0
     with open(path, "r") as file:
@@ -58,7 +58,7 @@ def getFileSize():
     return len(lines)
 
 def replaceFile():
-    path = "lol_reddit/recent_tweets.txt"
+    path = "recent_tweets.txt"
     with open(path, "r") as old:
         prev_lines = old.readlines()
     new_lines = prev_lines[-10:]
@@ -69,12 +69,12 @@ def replaceFile():
             new.write(line)
 
 def writeToFile(id):
-    path = "lol_reddit/recent_tweets.txt"
+    path = "recent_tweets.txt"
     with open(path, "a") as file:
         file.write(id)
         file.write("\n")
 def checkDuplicate(id):
-    path = "lol_reddit/recent_tweets.txt"
+    path = "recent_tweets.txt"
     if not exists(path):
         return False
     with open(path) as file:
