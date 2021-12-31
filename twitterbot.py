@@ -59,9 +59,10 @@ def main():
 
 def getReddit():
     id = os.environ["CLIENT_ID"]
+    print(id)
     secret = os.environ["CLIENT_SECRET"]
-    agent = os.environ["USER_AGENT"]
-
+    print(secret)
+    agent = os.environ["USER_AGENT"]    
     reddit = praw.Reddit(
         client_id = id,
         client_secret = secret,
