@@ -1,4 +1,4 @@
-# lol_reddit_recap
+# Reddit Recap Bot
 A twitter bot that tweets the top posts from r/leagueoflegends and r/leagueofmemes daily.
 https://twitter.com/lolredditrecap
 
